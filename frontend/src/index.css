@@ -1,0 +1,149 @@
+/* Fixed src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg transition duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+  
+  /* Custom primary colors using standard blue */
+  .bg-primary-50 {
+    @apply bg-blue-50;
+  }
+  
+  .bg-primary-500 {
+    @apply bg-blue-500;
+  }
+  
+  .bg-primary-600 {
+    @apply bg-blue-600;
+  }
+  
+  .bg-primary-700 {
+    @apply bg-blue-700;
+  }
+  
+  .text-primary-50 {
+    @apply text-blue-50;
+  }
+  
+  .text-primary-500 {
+    @apply text-blue-500;
+  }
+  
+  .text-primary-600 {
+    @apply text-blue-600;
+  }
+  
+  .text-primary-700 {
+    @apply text-blue-700;
+  }
+  
+  .border-primary-500 {
+    @apply border-blue-500;
+  }
+  
+  .ring-primary-500 {
+    @apply ring-blue-500;
+  }
+  
+  /* Secondary colors using gray */
+  .bg-secondary-50 {
+    @apply bg-gray-50;
+  }
+  
+  .bg-secondary-100 {
+    @apply bg-gray-100;
+  }
+  
+  .bg-secondary-200 {
+    @apply bg-gray-200;
+  }
+  
+  .text-secondary-600 {
+    @apply text-gray-600;
+  }
+  
+  .text-secondary-700 {
+    @apply text-gray-700;
+  }
+}
+
+/* Additional utility classes for the medical theme */
+@layer utilities {
+  .medical-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  }
+  
+  .medical-shadow {
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06);
+  }
+  
+  .ai-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .pulse-blue {
+    animation: pulse-blue 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes pulse-blue {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .7;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Toast animations */
+.toast-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.toast-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.toast-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
